@@ -4,6 +4,8 @@
 <a href="{% url 'logout' %}">Logout</a> <br>
 {% if user.usertype.type == 'APPLICANT' %}
 <a href="{% url 'applicant_profile' %}">Profile</a>
+{% elif user.usertype.type == 'RECRUITER' %}
+<a href="{% url 'recruiter_profile' %}">Profile</a>
 {% endif %}
 {% else %}
 <a href="{% url 'register' %}">Register</a> <br>

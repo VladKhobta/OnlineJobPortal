@@ -21,4 +21,5 @@ urlpatterns = [
     path('', include('pages.urls')),
     path('account/', include('account.urls')),
     path('applicant/', include('applicant.urls')),
+    path('recruiter/', include('recruiter.urls')),
 ]
