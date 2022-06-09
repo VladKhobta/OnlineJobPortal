@@ -21,6 +21,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='usertype',
             name='type',
-            field=models.CharField(choices=[('APPLICANT', 'Applicant'), ('RECRUITER', 'Recruiter')], default='APPLICANT', max_length=50),
+            field=models.CharField(choices=[('APPLICANT', 'Applicant'), ('COMPANY', 'Company')], default='APPLICANT', max_length=50),
         ),
     ]

@@ -31,6 +31,7 @@ class ApplicantSignUpForm(UserCreationForm):
         user.save()
         user_type = UserType.objects.create(user=user)
         user_type.type = 'APPLICANT'
+        user.usertype.save()
         applicant = Applicant.objects.create(user=user)
         applicant.save()
         return user

@@ -37,7 +37,8 @@ class UserManager(BaseUserManager):
 
 class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(max_length=254, unique=True)
-    name = models.CharField(max_length=254, null=True, blank=True)
+    first_name = models.CharField(max_length=254, null=True, blank=True)
+    last_name = models.CharField(max_length=254, null=True, blank=True)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
@@ -63,7 +64,7 @@ class UserType(models.Model):
 
     class Types(models.TextChoices):
         APPLICANT = 'APPLICANT', 'Applicant'
-        RECRUITER = 'RECRUITER', 'Recruiter'
+        COMPANY = 'COMPANY', 'Company'
 
     base_type = Types.APPLICANT
     type = models.CharField(max_length=50, choices=Types.choices, default=base_type)

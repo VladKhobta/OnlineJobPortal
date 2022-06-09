@@ -29,5 +29,5 @@ def applicant_register(request):
 
 
 @login_required
-def profile(request):
+def applicant_profile(request):
     return render(request, 'applicant_profile.html')

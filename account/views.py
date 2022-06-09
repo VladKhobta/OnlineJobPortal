@@ -27,6 +27,7 @@ def login_view(request):
             user = authenticate(email=email, password=password)
             print(email, password)
             if user is not None:
+                print(3)
                 print(user.usertype.type == 'APPLICANT')
                 login(request, user)
                 return redirect('/')
@@ -40,6 +41,8 @@ def login_view(request):
 @login_required
 def profile(request):
     if request.user.usertype.type == 'APPLICANT':
-        return render(request, 'applicant_profile.html')
-    elif request.user.usertype.type == 'APPLICANT':
-        return render(request, 'recruiter_profile.html')
+        print('in profile view by applicant')
+        return redirect('applicant_profile')
+    elif request.user.usertype.type == 'COMPANY':
+        print('in profile view by company')
+        return redirect('company_profile')

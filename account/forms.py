@@ -13,3 +13,14 @@ class LoginForm(forms.Form):
             'email',
             'password',
         ]
+
+
+class UserProfileForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = [
+            'email',
+            'first_name',
+            'last_name',
+            'phone_number',
+        ]
