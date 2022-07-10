@@ -1,0 +1,16 @@
+<head>
+    <title>Vacancy Placement</title>
+</head>
+
+<body>
+    <h2>Vacancy Placement</h2>
+    <div>
+        <form action="{% url 'vacancy_placement' %}" method="POST">
+            {% csrf_token %}
+            <table border="0">
+                {{ vacancy_placement_form }}
+            </table>
+            <input type="submit" value="place" class="btn btn-block btn-primary">
+        </form>
+    </div>
+</body>
