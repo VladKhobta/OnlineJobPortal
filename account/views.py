@@ -46,3 +46,13 @@ def profile(request):
     elif request.user.usertype.type == 'COMPANY':
         print('in profile view by company')
         return redirect('company_profile')
+
+
+@login_required
+def profile_update(request):
+    if request.user.usertype.type == 'APPLICANT':
+        print('in profile edit view by applicant')
+        return redirect('applicant_profile_update')
+    elif request.user.usertype.type == 'COMPANY':
+        print('in profile edit view by company')
+        return redirect('company_profile_update')

@@ -35,3 +35,19 @@ class ApplicantSignUpForm(UserCreationForm):
         applicant = Applicant.objects.create(user=user)
         applicant.save()
         return user
+
+
+class ApplicantProfileForm(forms.ModelForm):
+    class Meta:
+        model = Applicant
+        fields = [
+            'education',
+        ]
+
+
+class ApplicantUpdateForm(forms.ModelForm):
+    class Meta:
+        model = Applicant
+        fields = [
+            'education',
+        ]

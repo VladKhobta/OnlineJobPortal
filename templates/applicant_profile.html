@@ -1,1 +1,13 @@
-applicant_profile
+<h4 class="card-title font-weight-bold text-center">Hello, {{user.email}}</h4>
+<div class="card-text">
+	<form action="{% url 'applicant_profile' %}" method="GET">
+	{% csrf_token %}
+	<table border="0">
+		{{ applicant_form }}
+	</table>
+	<table border="0">
+		{{ user_form }}
+	</table>
+	</form>
+</div>
+<a type="button" class="btn btn-block" href="{% url 'profile_update' %}">Edit</a>

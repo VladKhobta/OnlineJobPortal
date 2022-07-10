@@ -24,3 +24,11 @@ class UserProfileForm(forms.ModelForm):
             'last_name',
             'phone_number',
         ]
+
+
+class UserUpdateForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = [
+            'first_name',
+        ]

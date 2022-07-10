@@ -1,20 +1,14 @@
-	<br><br>
-	<div class="container mx-auto">
-	    <div class="row">
-	    	<div class="col-sm-12 col-md-12 col-lg-3 pb-4">
-		    	<div class="card p-4">
-			    	<h4 class="card-title font-weight-bold text-center">Hello, {{user.email}}</h4>
-			      	<hr>
-			    	<div class="card-text">
-			    		<p class="text-muted mb-0" style="font-size: 12px">Designation:</p>
-				  		<p>{{user.company.designation}}</p>
-				  		<p class="text-muted mb-0" style="font-size: 12px">Email:</p>
-				  		<p>{{user.email}}</p>
-			        </div>
-		    	</div>
-		  	</div>
-		    <div class="col-sm-12 col-md-12 col-lg-9 pb-4">
-		    	...
-		    </div>
-		</div>
-	</div>
+<h4 class="card-title font-weight-bold text-center">Hello, {{user.email}}</h4>
+<div class="card-text">
+	<form action="{% url 'company_profile' %}" method="GET">
+	{% csrf_token %}
+	<table border="0">
+		{{ company_form }}
+	</table>
+	<table border="0">
+		{{ user_form }}
+	</table>
+	</form>
+</div>
+<a type="button" class="btn btn-block" href="{% url 'profile_update' %}">Edit</a>
+<a type="button" class="btn btn-block" href="{% url 'vacancy_placement' %}">Place vacancy</a>
